@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#10051f">
+<meta name="description" content="Una sorpresa de cumpleaños hecha con cariño para Monse Torres.">
+<title>Feliz cumpleaños, Monse Torres 💖</title>
+<style>
+  :root { color-scheme: dark; --pink:#ff8de5; --lilac:#c6a2ff; }
+  * { box-sizing:border-box; }
+  html { min-height:100%; }
+  body {
+    margin:0; min-height:100vh; min-height:100svh; overflow-x:hidden;
+    color:#fff3ff; font-family: ui-rounded, "Trebuchet MS", system-ui, sans-serif;
+    background: radial-gradient(ellipse at 50% 35%, #4d176f 0%, #210b3d 35%, #10051f 72%, #070410 100%);
+    text-align:center;
+  }
+  #stars { position:fixed; inset:0; width:100%; height:100%; z-index:0; pointer-events:none; }
+  .nebula { position:fixed; inset:-20%; z-index:0; pointer-events:none; opacity:.6;
+    background: radial-gradient(ellipse at 25% 35%, #d52caa33, transparent 35%),
+                radial-gradient(ellipse at 78% 65%, #6b42ff33, transparent 38%);
+    animation: nebula 14s ease-in-out infinite alternate; }
+  @keyframes nebula { to { transform:translate3d(2%, -2%, 0) scale(1.08); opacity:.9; } }
+  main { position:relative; z-index:1; width:min(100% - 28px, 680px); margin:auto; padding:clamp(28px,7vh,65px) 0 38px; }
+  .eyebrow { color:#f7b8ff; letter-spacing:.16em; text-transform:uppercase; font-size:.75rem; }
+  h1 { margin:.4em 0 .1em; line-height:1.08; font-size:clamp(2.25rem, 10vw, 4.3rem); font-weight:800;
+    background:linear-gradient(100deg,#fff7ff,#ff9ce9,#c7a5ff,#fff); background-size:220%;
+    -webkit-background-clip:text; background-clip:text; color:transparent; animation: shimmer 6s linear infinite; }
+  @keyframes shimmer { to { background-position:220% center; } }
+  .name { color:#ffc2f2; font-size:clamp(1.25rem,5vw,1.8rem); margin:12px 0; }
+  .intro { color:#e8d6ff; line-height:1.7; max-width:480px; margin:16px auto 22px; }
+  .cosmos { height:clamp(180px, 48vw, 290px); display:grid; place-items:center; position:relative; }
+  .heart { font-size:clamp(7rem, 35vw, 13rem); line-height:1; filter:drop-shadow(0 0 12px #ff70df) drop-shadow(0 0 35px #b33cff); animation: beat 1.25s ease-in-out infinite; user-select:none; }
+  @keyframes beat { 0%,100% { transform:scale(1); } 14% { transform:scale(1.12); } 28% { transform:scale(1); } 42% { transform:scale(1.08); } }
+  .orbit { position:absolute; width:clamp(170px,60vw,300px); aspect-ratio:1; border:1px solid #f5a6ff55; border-radius:50%; box-shadow:0 0 25px #b749ff22; animation: spin 18s linear infinite; }
+  .orbit:before,.orbit:after { content:"✦"; position:absolute; color:#ffd6ff; text-shadow:0 0 12px #ff8de5; }
+  .orbit:before { top:10%; left:18%; } .orbit:after { right:12%; bottom:17%; }
+  @keyframes spin { to { transform:rotate(360deg); } }
+  .hint { color:#e7caff; font-size:.92rem; margin:0 0 12px; }
+  .envelope-button { appearance:none; border:0; background:transparent; color:inherit; width:100%; padding:10px 0 0; cursor:pointer; -webkit-tap-highlight-color:transparent; }
+  .envelope { width:min(100%,390px); height:180px; margin:auto; position:relative; display:grid; place-items:center;
+    border:2px solid #ff9be9; border-radius:13px; background:linear-gradient(145deg,#a749b54a,#38205d99);
+    box-shadow:0 0 12px #ff77df88, inset 0 0 22px #b24cff30; transition:transform .35s ease, box-shadow .35s ease; }
+  .envelope:before { content:""; position:absolute; inset:0; border-radius:10px; background:linear-gradient(145deg,transparent 49.5%,#ffb5efaa 50%,transparent 50.8%),linear-gradient(35deg,transparent 49.5%,#ffb5efaa 50%,transparent 50.8%); }
+  .flap { position:absolute; top:-2px; left:-2px; right:-2px; height:92px; transform-origin:top; transition:transform .65s ease; z-index:2;
+    clip-path:polygon(0 0,100% 0,50% 100%); background:linear-gradient(135deg,#ffb5ed,#a879ff); filter:drop-shadow(0 3px 4px #10051f); }
+  .seal { z-index:3; position:absolute; top:69px; font-size:2rem; filter:drop-shadow(0 0 9px #ff8de5); transition:opacity .2s; }
+  .envelope-label { z-index:1; color:#ffe7ff; font-size:.95rem; padding:0 20px; text-shadow:0 1px 8px #10051f; }
+  .envelope-button:hover .envelope { transform:translateY(-3px); box-shadow:0 0 24px #ff77dfbb, inset 0 0 22px #b24cff30; }
+  .envelope-button:focus-visible { outline:2px solid white; outline-offset:7px; border-radius:14px; }
+  .letter { display:none; text-align:left; margin:22px auto 0; width:min(100%,520px); padding:24px 22px; border:1px solid #ffa4eb; border-radius:18px;
+    background:linear-gradient(150deg,#301244ee,#160b2bf5); box-shadow:0 0 28px #c84eff38; line-height:1.8; animation: appear .65s ease both; }
+  .letter h2 { color:#ffb2ed; text-align:center; margin:0 0 14px; font-size:1.35rem; }
+  .letter p { margin:12px 0; }
+  .letter .quote { color:#ffe0fa; font-size:1.08rem; }
+  .letter .signoff { text-align:center; color:#ffb4ee; font-weight:700; font-size:1.12rem; margin-top:20px; }
+  .opened .flap { transform:rotateX(180deg); opacity:.35; }
+  .opened .seal { opacity:0; }
+  .opened .envelope { box-shadow:0 0 28px #ff77dfbb; }
+  .opened .letter { display:block; }
+  @keyframes appear { from { opacity:0; transform:translateY(14px); } to { opacity:1; transform:translateY(0); } }
+  .wish { margin:30px auto 0; color:#d9c1ff; font-size:.92rem; line-height:1.7; }
+  .footer { color:#c6a8e5; font-size:.78rem; margin-top:25px; }
+  .sparkle { position:fixed; z-index:2; pointer-events:none; animation:floatUp 1.8s ease-out forwards; font-size:20px; }
+  @keyframes floatUp { from { transform:translateY(0) scale(.6); opacity:1; } to { transform:translateY(-140px) scale(1.5); opacity:0; } }
+  @media (prefers-reduced-motion: reduce) { *,*::before,*::after { animation-duration:.01ms !important; animation-iteration-count:1 !important; transition-duration:.01ms !important; } }
+</style>
+</head>
+<body>
+<canvas id="stars" aria-hidden="true"></canvas><div class="nebula" aria-hidden="true"></div>
+<main>
+  <div class="eyebrow">Una pequeña sorpresa para ti</div>
+  <h1>¡Feliz cumpleaños!</h1>
+  <div class="name">Monse Torres ♡</div>
+  <p class="intro">Hoy el universo tiene una razón más para brillar: celebrar que existes. ✨</p>
+  <section class="cosmos" aria-label="Un corazón brillante entre las estrellas">
+    <div class="orbit"></div><div class="heart" aria-hidden="true">💖</div>
+  </section>
+  <p class="hint">Preparé algo para ti… 💌</p>
+  <button class="envelope-button" id="openLetter" aria-expanded="false" aria-controls="letter">
+    <div class="envelope" aria-hidden="true"><div class="flap"></div><div class="seal">♡</div><div class="envelope-label">Toca aquí para abrir tu carta</div></div>
+  </button>
+  <article class="letter" id="letter" aria-live="polite">
+    <h2>Para Monse, con mucho cariño 💗</h2>
+    <p>Mi Monse,</p>
+    <p class="quote">«Si pudiera regalarte algo en este universo, te regalaría la oportunidad de verte a través de mis ojos, para que entiendas lo especial que eres para mí».</p>
+    <p>Deseo que este nuevo año de vida te regale muchísimas razones para sonreír, sueños que se hagan realidad, tranquilidad para tu corazón y personas que te quieran tan bonito como mereces.</p>
+    <p>Gracias por existir y por tener esa forma tan tuya de hacer que los días se sientan más especiales. Ojalá hoy recibas un poquito de toda la luz y la alegría que mereces. Nunca olvides lo valiosa, única e increíble que eres.</p>
+    <p class="signoff">Te quiero, Monse. ❤️<br>Hoy, mañana y siempre. ✨</p>
+  </article>
+  <p class="wish">Que todos tus deseos encuentren su camino hasta las estrellas. 🌙</p>
+  <div class="footer">Hecho especialmente para ti, con cariño ♡</div>
+</main>
+<script>
+(() => {
+  const canvas = document.getElementById('stars');
+  const ctx = canvas.getContext('2d');
+  let w=0,h=0,stars=[];
+  function resize(){
+    const dpr=Math.min(window.devicePixelRatio||1,2);
+    w=window.innerWidth; h=window.innerHeight;
+    canvas.width=Math.floor(w*dpr); canvas.height=Math.floor(h*dpr);
+    canvas.style.width=w+'px'; canvas.style.height=h+'px'; ctx.setTransform(dpr,0,0,dpr,0,0);
+    const count=Math.min(130,Math.floor(w*h/6500));
+    stars=Array.from({length:count},()=>({x:Math.random()*w,y:Math.random()*h,r:Math.random()*1.5+.35,a:Math.random()*.65+.2,s:Math.random()*.012+.003,p:Math.random()*Math.PI*2}));
+  }
+  function draw(t){
+    ctx.clearRect(0,0,w,h);
+    for(const s of stars){ const alpha=s.a*(.65+.35*Math.sin(t*s.s+s.p)); ctx.beginPath(); ctx.arc(s.x,s.y,s.r,0,Math.PI*2); ctx.fillStyle=`rgba(255,220,255,${alpha})`; ctx.fill(); }
+    requestAnimationFrame(draw);
+  }
+  resize(); window.addEventListener('resize',resize,{passive:true}); requestAnimationFrame(draw);
+  const btn=document.getElementById('openLetter');
+  btn.addEventListener('click',()=>{
+    const isOpen=document.body.classList.toggle('opened');
+    btn.setAttribute('aria-expanded',String(isOpen));
+    btn.querySelector('.envelope-label').textContent=isOpen?'Tu carta está abierta ♡':'Toca aquí para abrir tu carta';
+    if(isOpen){
+      for(let i=0;i<18;i++){
+        const el=document.createElement('span'); el.className='sparkle'; el.textContent=['♡','✨','💗','✦'][i%4];
+        el.style.left=(8+Math.random()*84)+'vw'; el.style.top=(45+Math.random()*35)+'vh';
+        document.body.appendChild(el); setTimeout(()=>el.remove(),1900);
+      }
+      setTimeout(()=>document.getElementById('letter').scrollIntoView({behavior:'smooth',block:'center'}),150);
+    }
+  });
+})();
+</script>
+</body>
+</html>
